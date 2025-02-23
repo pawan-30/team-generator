@@ -55,7 +55,3 @@ def generate_teams():
 
     return jsonify({'teams': teams, 'final_ratings': final_ratings})
 
-port = int(os.environ.get("PORT", 8080))  # Use Railway's assigned port
-
-if __name__ == '__main__':
-     app.run(debug=False, host="0.0.0.0", port=port)
