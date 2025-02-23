@@ -5,7 +5,7 @@ import random
 app = Flask(__name__)
 
 @app.route('/')
-def index():
+def home():
     return render_template('index.html')
 
 @app.route('/generate_teams', methods=['POST'])
@@ -55,7 +55,6 @@ def generate_teams():
 
     return jsonify({'teams': teams, 'final_ratings': final_ratings})
 
-port = int(os.environ.get("PORT", 8082))  # Use Railway's assigned port
-
-if __name__ == '__main__':
-     app.run(debug=False, host="0.0.0.0", port=port)
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))  # Railway sets $PORT
+    app.run(debug=False, host="0.0.0.0", port=port)
